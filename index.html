@@ -6,48 +6,35 @@
     <title>Usman Khan | Portfolio</title>
     <meta
       name="description"
-      content="Portfolio website of Usman Khan — software developer, problem solver, and tech enthusiast."
+      content="Portfolio of Usman Khan — a web developer focused on frontend, web projects, and practical problem solving."
     />
     <style>
       :root {
-        --bg: #081120;
-        --bg-soft: #0f1b2d;
+        --bg: #07111d;
+        --bg-soft: #0e1d2f;
         --panel: rgba(255, 255, 255, 0.04);
         --panel-strong: rgba(255, 255, 255, 0.08);
-        --text: #eaf2ff;
-        --muted: #a7b4c9;
-        --primary: #4cc9f0;
-        --primary-2: #7b61ff;
-        --accent: #19c37d;
-        --border: rgba(255, 255, 255, 0.1);
-        --shadow: 0 20px 45px rgba(3, 7, 18, 0.45);
+        --text: #edf4ff;
+        --muted: #afbdd2;
+        --primary: #67e8f9;
+        --primary-2: #8b5cf6;
+        --accent: #22c55e;
+        --border: rgba(255, 255, 255, 0.12);
+        --shadow: 0 18px 40px rgba(1, 5, 15, 0.42);
       }
 
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        background: radial-gradient(circle at top, #13213a 0%, var(--bg) 45%, #050b14 100%);
+        background: radial-gradient(circle at top, #0d1d32 0%, var(--bg) 42%, #040a12 100%);
         color: var(--text);
-        line-height: 1.6;
+        line-height: 1.7;
       }
 
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
 
       .container {
         width: min(1100px, calc(100% - 32px));
@@ -57,10 +44,10 @@
       header {
         position: sticky;
         top: 0;
-        backdrop-filter: blur(10px);
-        background: rgba(8, 17, 32, 0.75);
-        border-bottom: 1px solid var(--border);
         z-index: 20;
+        background: rgba(7, 17, 29, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
       }
 
       .nav {
@@ -72,52 +59,40 @@
 
       .brand {
         font-size: 1.2rem;
-        font-weight: 700;
+        font-weight: 800;
         letter-spacing: 0.04em;
       }
 
-      .brand span {
-        color: var(--primary);
-      }
+      .brand span { color: var(--primary); }
 
       .nav-links {
         display: flex;
-        gap: 24px;
         align-items: center;
+        gap: 22px;
         flex-wrap: wrap;
       }
 
       .nav-links a {
         color: var(--muted);
         font-size: 0.95rem;
-        transition: color 0.2s ease;
       }
 
-      .nav-links a:hover,
-      .nav-links a:focus-visible {
-        color: var(--text);
-      }
+      .nav-links a:hover { color: var(--text); }
 
       .button {
         display: inline-block;
-        border: none;
         border-radius: 999px;
-        padding: 0.9rem 1.5rem;
+        padding: 0.82rem 1.4rem;
         font-weight: 700;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.2s ease;
       }
 
-      .button:hover {
-        transform: translateY(-1px);
-      }
-
+      .button:hover { transform: translateY(-1px); }
       .button.primary {
         background: linear-gradient(135deg, var(--primary), var(--primary-2));
-        color: #041220;
-        box-shadow: 0 12px 30px rgba(76, 201, 240, 0.35);
+        color: #06131d;
+        box-shadow: 0 12px 30px rgba(103, 232, 249, 0.28);
       }
-
       .button.secondary {
         background: transparent;
         border: 1px solid var(--border);
@@ -125,7 +100,7 @@
       }
 
       .hero {
-        padding: 80px 0 40px;
+        padding: 84px 0 36px;
       }
 
       .hero-wrap {
@@ -137,25 +112,25 @@
 
       .eyebrow {
         display: inline-block;
-        color: var(--primary);
-        background: rgba(76, 201, 240, 0.12);
-        border: 1px solid rgba(76, 201, 240, 0.2);
+        margin-bottom: 16px;
+        padding: 0.42rem 0.8rem;
         border-radius: 999px;
-        padding: 0.4rem 0.85rem;
-        font-size: 0.8rem;
-        letter-spacing: 0.08em;
+        background: rgba(103, 232, 249, 0.12);
+        border: 1px solid rgba(103, 232, 249, 0.2);
+        color: var(--primary);
         text-transform: uppercase;
-        margin-bottom: 18px;
+        letter-spacing: 0.08em;
+        font-size: 0.76rem;
       }
 
       h1 {
-        font-size: clamp(2.4rem, 5vw, 4.5rem);
-        line-height: 1.05;
         margin: 0 0 18px;
+        font-size: clamp(2.5rem, 6vw, 4.6rem);
+        line-height: 1.06;
       }
 
       .highlight {
-        background: linear-gradient(135deg, var(--primary), #d7e8ff);
+        background: linear-gradient(135deg, var(--primary), #dfeeff);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -163,22 +138,22 @@
 
       .hero p {
         color: var(--muted);
-        max-width: 600px;
-        font-size: 1.05rem;
+        max-width: 620px;
+        font-size: 1.04rem;
       }
 
       .cta-row {
         margin-top: 28px;
         display: flex;
         flex-wrap: wrap;
-        gap: 16px;
+        gap: 14px;
       }
 
       .hero-meta {
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
-        margin-top: 32px;
+        gap: 26px;
+        margin-top: 28px;
       }
 
       .hero-meta strong {
@@ -191,66 +166,57 @@
       }
 
       .profile-card {
-        position: relative;
-        background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+        padding: 18px;
         border: 1px solid var(--border);
         border-radius: 28px;
-        padding: 18px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
         box-shadow: var(--shadow);
-      }
-
-      .profile-card::before {
-        content: "";
-        position: absolute;
-        inset: 14px;
-        border-radius: 22px;
-        border: 1px solid rgba(255,255,255,0.06);
       }
 
       .avatar {
         position: relative;
-        overflow: hidden;
-        border-radius: 22px;
-        min-height: 420px;
-        background: linear-gradient(135deg, rgba(76,201,240,0.25), rgba(123,97,255,0.25));
+        min-height: 440px;
         display: flex;
         align-items: end;
         justify-content: center;
         padding: 30px;
+        border-radius: 22px;
+        background: linear-gradient(135deg, rgba(103, 232, 249, 0.24), rgba(139, 92, 246, 0.22));
+        overflow: hidden;
       }
 
       .avatar::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(circle at top, rgba(255,255,255,0.15), transparent 42%);
+        background: radial-gradient(circle at top, rgba(255,255,255,0.18), transparent 40%);
       }
 
       .avatar-box {
         position: relative;
         z-index: 1;
-        width: 240px;
-        height: 240px;
+        width: 260px;
+        height: 260px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #dfeafc, #97d9ff 30%, #7b61ff 100%);
-        box-shadow: inset 0 0 25px rgba(255,255,255,0.35), 0 18px 35px rgba(0,0,0,0.28);
+        background: linear-gradient(135deg, #f8fbff, #a6dbff 40%, #7c6fe7 100%);
+        box-shadow: inset 0 0 25px rgba(255,255,255,0.32), 0 18px 35px rgba(0,0,0,0.24);
       }
 
       .section {
-        padding: 52px 0;
+        padding: 56px 0;
       }
 
       .section-header {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        gap: 20px;
+        gap: 18px;
         margin-bottom: 26px;
       }
 
       .section-header h2 {
-        font-size: clamp(1.8rem, 3vw, 2.6rem);
         margin: 0;
+        font-size: clamp(1.9rem, 3vw, 2.8rem);
       }
 
       .section-header p {
@@ -258,13 +224,17 @@
         color: var(--muted);
       }
 
-      .about-grid {
+      .about-grid,
+      .contact-box {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-columns: 1.15fr 0.85fr;
         gap: 24px;
       }
 
-      .card {
+      .card,
+      .skill-item,
+      .project-card,
+      .timeline-card {
         background: var(--panel);
         border: 1px solid var(--border);
         border-radius: 22px;
@@ -272,15 +242,19 @@
         box-shadow: var(--shadow);
       }
 
-      .card p {
+      .card p,
+      .skill-item p,
+      .project-card p,
+      .timeline-card p,
+      .mini-item,
+      .contact-item {
         color: var(--muted);
-        margin: 0;
       }
 
       .mini-list {
         display: grid;
         gap: 12px;
-        margin-top: 18px;
+        margin-top: 8px;
       }
 
       .mini-item {
@@ -289,41 +263,48 @@
         gap: 12px;
         padding: 12px 14px;
         border-radius: 12px;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.07);
+        background: rgba(255,255,255,0.02);
       }
 
       .dot {
         width: 10px;
         height: 10px;
-        border-radius: 99px;
+        border-radius: 50%;
         background: linear-gradient(135deg, var(--primary), var(--accent));
       }
 
-      .skills-grid,
-      .projects-grid {
+      .timeline {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 20px;
       }
 
-      .skill-item,
-      .project-card {
-        background: var(--panel);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 22px;
+      .timeline-card h3 {
+        margin: 0 0 14px;
+        color: var(--text);
+      }
+
+      .timeline-card ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+      }
+
+      .timeline-card li {
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+
+      .projects-grid,
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
       }
 
       .skill-item h3,
       .project-card h3 {
-        margin: 0 0 10px;
-      }
-
-      .skill-item p,
-      .project-card p {
-        color: var(--muted);
-        margin: 0;
+        margin: 0 0 12px;
       }
 
       .skill-tags {
@@ -334,9 +315,9 @@
       }
 
       .tag {
-        background: rgba(76, 201, 240, 0.09);
-        border: 1px solid rgba(76, 201, 240, 0.2);
-        color: #dfeeff;
+        background: rgba(103, 232, 249, 0.1);
+        border: 1px solid rgba(103, 232, 249, 0.22);
+        color: #e5f9ff;
         border-radius: 999px;
         padding: 0.4rem 0.7rem;
         font-size: 0.8rem;
@@ -351,21 +332,21 @@
       .project-badge {
         display: inline-flex;
         align-self: flex-start;
-        background: rgba(25, 195, 125, 0.12);
-        color: #a5ffd2;
-        border: 1px solid rgba(25, 195, 125, 0.2);
         border-radius: 999px;
-        padding: 0.35rem 0.75rem;
-        font-size: 0.75rem;
-        letter-spacing: 0.04em;
+        padding: 0.36rem 0.72rem;
+        background: rgba(34, 197, 94, 0.12);
+        border: 1px solid rgba(34, 197, 94, 0.22);
+        color: #adf4c3;
+        font-size: 0.72rem;
         text-transform: uppercase;
+        letter-spacing: 0.04em;
       }
 
       .project-links {
         margin-top: auto;
         display: flex;
-        gap: 12px;
         flex-wrap: wrap;
+        gap: 12px;
       }
 
       .text-link {
@@ -373,57 +354,47 @@
         font-weight: 700;
       }
 
-      .contact-box {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 20px;
-        align-items: center;
-      }
-
       .contact-card {
-        background: linear-gradient(135deg, rgba(76, 201, 240, 0.1), rgba(123, 97, 255, 0.08));
+        background: linear-gradient(135deg, rgba(103, 232, 249, 0.08), rgba(139, 92, 246, 0.08));
         border: 1px solid var(--border);
         border-radius: 22px;
-        padding: 26px;
+        padding: 28px;
       }
 
       .contact-list {
         display: grid;
-        gap: 14px;
+        gap: 12px;
         margin-top: 18px;
       }
 
-      .contact-item {
-        color: var(--muted);
-      }
-
       footer {
-        padding: 28px 0 50px;
-        color: var(--muted);
+        padding: 24px 0 40px;
         border-top: 1px solid var(--border);
         text-align: center;
+        color: var(--muted);
       }
 
       @media (max-width: 860px) {
         .hero-wrap,
         .about-grid,
-        .skills-grid,
+        .contact-box,
+        .timeline,
         .projects-grid,
-        .contact-box {
+        .skills-grid {
           grid-template-columns: 1fr;
         }
 
         .nav {
           flex-direction: column;
-          gap: 14px;
+          gap: 12px;
         }
 
         .hero {
-          padding-top: 56px;
+          padding-top: 60px;
         }
 
         .avatar {
-          min-height: 300px;
+          min-height: 320px;
         }
       }
     </style>
@@ -434,10 +405,11 @@
         <a href="#home" class="brand">Usman<span>KD8</span></a>
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#about">About</a>
+          <a href="#journey">Journey</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
-          <a href="mailto:usman.kd8@example.com" class="button primary">Hire Me</a>
+          <a href="https://github.com/UsmanKD8" class="button primary">GitHub</a>
         </nav>
       </div>
     </header>
@@ -446,32 +418,32 @@
       <section class="hero">
         <div class="container hero-wrap">
           <div>
-            <span class="eyebrow">Full Stack Developer</span>
+            <span class="eyebrow">Web Developer</span>
             <h1>
-              I build <span class="highlight">digital experiences</span>
-              that solve real problems.
+              I build <span class="highlight">practical digital solutions</span>
+              from ideas to working products.
             </h1>
             <p>
-              I’m Usman Khan, a passionate developer focused on creating clean,
-              modern, and user-friendly web experiences. I enjoy turning concepts into
-              scalable products and impactful interfaces.
+              I’m Usman Khan, a self-driven developer with hands-on experience in web development,
+              JavaScript, frontend projects, and academic/real-world problem solving. My work reflects
+              a mix of learning, execution, and continuous growth across 2024–2026.
             </p>
             <div class="cta-row">
               <a href="#projects" class="button primary">View Projects</a>
-              <a href="#contact" class="button secondary">Contact Me</a>
+              <a href="#contact" class="button secondary">Connect</a>
             </div>
             <div class="hero-meta" aria-label="Quick stats">
               <div>
                 <strong>2+</strong>
-                <span>Years Experience</span>
+                <span>Years of learning</span>
               </div>
               <div>
-                <strong>8+</strong>
-                <span>Projects Built</span>
+                <strong>20+</strong>
+                <span>Public repos</span>
               </div>
               <div>
                 <strong>100%</strong>
-                <span>Commitment</span>
+                <span>Growth mindset</span>
               </div>
             </div>
           </div>
@@ -488,26 +460,69 @@
         <div class="container">
           <div class="section-header">
             <h2>About Me</h2>
-            <p>Building with purpose, clarity, and creativity</p>
+            <p>Focused, curious, and building step by step</p>
           </div>
 
           <div class="about-grid">
             <div class="card">
               <p>
-                I am a developer who enjoys crafting efficient, responsive, and polished
-                software. My work combines technical problem-solving with a strong eye for
-                design and good user experience. I love learning new tools, improving my craft,
-                and delivering value through practical solutions.
+                I am a developer who enjoys turning ideas into working web experiences. My journey has
+                included HTML, CSS, JavaScript, React, assignments, hackathons, university work, and internship-based
+                projects. I like creating clean interfaces, solving coding challenges, and improving my skills through
+                real implementation.
               </p>
             </div>
 
             <div class="card">
               <div class="mini-list">
-                <div class="mini-item"><span class="dot"></span> Frontend & backend development</div>
-                <div class="mini-item"><span class="dot"></span> Responsive web design</div>
-                <div class="mini-item"><span class="dot"></span> API integrations & project logic</div>
-                <div class="mini-item"><span class="dot"></span> Problem solving and debugging</div>
+                <div class="mini-item"><span class="dot"></span> Frontend & responsive web design</div>
+                <div class="mini-item"><span class="dot"></span> JavaScript and React learning projects</div>
+                <div class="mini-item"><span class="dot"></span> Hackathons, training, and internship work</div>
+                <div class="mini-item"><span class="dot"></span> Problem solving and continuous improvement</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="journey" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Work Journey</h2>
+            <p>Progress from learning to project execution</p>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-card">
+              <h3>2024</h3>
+              <p>Built foundational web and JavaScript project work, including assignments, practice tasks, and beginner React learning.</p>
+              <ul>
+                <li>assignment</li>
+                <li>JS-all-AssignmentS</li>
+                <li>react / react-2</li>
+                <li>pokemon / test / new-code</li>
+              </ul>
+            </div>
+
+            <div class="timeline-card">
+              <h3>2025</h3>
+              <p>Focused on hackathons, collaborative coding, and structured training-based project development.</p>
+              <ul>
+                <li>hackathon</li>
+                <li>SMIT-HAckhathon</li>
+                <li>Hackhathon-Saylani</li>
+              </ul>
+            </div>
+
+            <div class="timeline-card">
+              <h3>2026</h3>
+              <p>Expanded into internship, university, and more polished project execution with practical exposure.</p>
+              <ul>
+                <li>internship-DHC-Work</li>
+                <li>SAYLANI-WORKS</li>
+                <li>UNI-JAVA-WORK</li>
+                <li>UNI-PYTHON-WORK</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -517,13 +532,13 @@
         <div class="container">
           <div class="section-header">
             <h2>Skills</h2>
-            <p>Tools and technologies I work with</p>
+            <p>Core technologies and practical strengths</p>
           </div>
 
           <div class="skills-grid">
             <div class="skill-item">
               <h3>Frontend</h3>
-              <p>Creating engaging interfaces with clean structure and strong usability.</p>
+              <p>Building responsive, user-friendly interfaces with clean structure and modern design.</p>
               <div class="skill-tags">
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
@@ -533,24 +548,24 @@
             </div>
 
             <div class="skill-item">
-              <h3>Backend</h3>
-              <p>Building practical logic and reliable systems behind user-facing products.</p>
+              <h3>Programming</h3>
+              <p>Solving coding problems and building logic-driven projects through practice and iteration.</p>
               <div class="skill-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Java</span>
                 <span class="tag">Node.js</span>
-                <span class="tag">Express</span>
-                <span class="tag">MongoDB</span>
                 <span class="tag">API</span>
               </div>
             </div>
 
             <div class="skill-item">
-              <h3>Other</h3>
-              <p>Focused on speed, maintainability, and creating trustworthy solutions.</p>
+              <h3>Workflow</h3>
+              <p>Working with version control, project organization, and iterative learning.</p>
               <div class="skill-tags">
                 <span class="tag">Git</span>
                 <span class="tag">GitHub</span>
                 <span class="tag">UI/UX</span>
-                <span class="tag">SEO</span>
+                <span class="tag">Debugging</span>
               </div>
             </div>
           </div>
@@ -560,38 +575,63 @@
       <section id="projects" class="section">
         <div class="container">
           <div class="section-header">
-            <h2>Projects</h2>
-            <p>Recent work and personal builds</p>
+            <h2>Featured Projects</h2>
+            <p>Selected work from my GitHub and ongoing learning journey</p>
           </div>
 
           <div class="projects-grid">
             <article class="project-card">
-              <span class="project-badge">Web App</span>
-              <h3>Portfolio Website</h3>
-              <p>A modern portfolio website designed to present work, skills, and profile effectively.</p>
+              <span class="project-badge">Training</span>
+              <h3>SAYLANI-WORKS</h3>
+              <p>Structured coursework and project work completed during professional training and learning sessions.</p>
               <div class="project-links">
-                <a href="#" class="text-link">Live Demo</a>
-                <a href="#" class="text-link">Source Code</a>
+                <a href="https://github.com/UsmanKD8/SAYLANI-WORKS" class="text-link" target="_blank" rel="noreferrer">View Repo</a>
               </div>
             </article>
 
             <article class="project-card">
-              <span class="project-badge">Business</span>
-              <h3>Landing Page</h3>
-              <p>A conversion-focused landing page tailored for a brand or startup with strong call-to-actions.</p>
+              <span class="project-badge">Internship</span>
+              <h3>internship-DHC-Work</h3>
+              <p>Project execution and practical work during internship experience, reflecting real-world learning and implementation.</p>
               <div class="project-links">
-                <a href="#" class="text-link">View</a>
-                <a href="#" class="text-link">Code</a>
+                <a href="https://github.com/UsmanKD8/internship-DHC-Work" class="text-link" target="_blank" rel="noreferrer">View Repo</a>
               </div>
             </article>
 
             <article class="project-card">
-              <span class="project-badge">Tools</span>
-              <h3>Developer Utility</h3>
-              <p>A useful tool or dashboard created to simplify workflows and improve productivity.</p>
+              <span class="project-badge">Hackathon</span>
+              <h3>Hackhathon-Saylani</h3>
+              <p>Collaborative challenge-based work focused on creating creative solutions within a limited time frame.</p>
               <div class="project-links">
-                <a href="#" class="text-link">Explore</a>
-                <a href="#" class="text-link">GitHub</a>
+                <a href="https://github.com/UsmanKD8/Hackhathon-Saylani" class="text-link" target="_blank" rel="noreferrer">View Repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <span class="project-badge">JS</span>
+              <h3>JS-all-AssignmentS</h3>
+              <p>JavaScript assignments and coding exercises covering logic, functions, DOM, and problem solving.</p>
+              <div class="project-links">
+                <a href="https://github.com/UsmanKD8/JS-all-AssignmentS" class="text-link" target="_blank" rel="noreferrer">View Repo</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <span class="project-badge">React</span>
+              <h3>react / react-2</h3>
+              <p>React-based practice projects focusing on front-end components, structure, and UI development.</p>
+              <div class="project-links">
+                <a href="https://github.com/UsmanKD8/react" class="text-link" target="_blank" rel="noreferrer">React</a>
+                <a href="https://github.com/UsmanKD8/react-2" class="text-link" target="_blank" rel="noreferrer">React 2</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <span class="project-badge">Academic</span>
+              <h3>UNI-JAVA-WORK</h3>
+              <p>University coursework focused on Java programming, logic building, and academic development tasks.</p>
+              <div class="project-links">
+                <a href="https://github.com/UsmanKD8/UNI-JAVA-WORK" class="text-link" target="_blank" rel="noreferrer">View Repo</a>
               </div>
             </article>
           </div>
@@ -601,23 +641,22 @@
       <section id="contact" class="section">
         <div class="container contact-box">
           <div class="contact-card">
-            <span class="eyebrow">Let’s Connect</span>
-            <h2>Available for freelance work and opportunities</h2>
+            <span class="eyebrow">Connect</span>
+            <h2>Open to opportunities, learning, and collaboration</h2>
             <div class="contact-list">
-              <div class="contact-item">Email: usman.kd8@example.com</div>
-              <div class="contact-item">LinkedIn: linkedin.com/in/usmankd8</div>
               <div class="contact-item">GitHub: github.com/UsmanKD8</div>
+              <div class="contact-item">LinkedIn: linkedin.com/in/usmankd8</div>
+              <div class="contact-item">Portfolio: usmankd8.github.io</div>
             </div>
           </div>
 
           <div class="card">
             <p>
-              I enjoy collaborating on meaningful projects, improving digital experiences,
-              and building things that create value for users and businesses alike.
+              I enjoy building real-world solutions, improving my technical foundation, and contributing to projects where clean code and good user experience matter.
             </p>
             <div class="cta-row">
-              <a href="mailto:usman.kd8@example.com" class="button primary">Email Me</a>
-              <a href="https://github.com/UsmanKD8" class="button secondary">GitHub</a>
+              <a href="https://github.com/UsmanKD8" class="button primary" target="_blank" rel="noreferrer">Visit GitHub</a>
+              <a href="https://www.linkedin.com/in/usmankd8" class="button secondary" target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
           </div>
         </div>
@@ -625,7 +664,7 @@
     </main>
 
     <footer>
-      <div class="container">© 2026 Usman Khan. All rights reserved.</div>
+      <div class="container">© 2026 Usman Khan • Portfolio</div>
     </footer>
   </body>
 </html>
