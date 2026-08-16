@@ -1,24 +1,27 @@
-# Usman Khan Portfolio
+# Muhammad Usman Farooqi Portfolio
 
-This repository hosts the personal portfolio website for Usman Khan.
+This repository hosts the personal portfolio website for Muhammad Usman Farooqi.
 
 ## Live site
 - https://usmankd8.github.io
 
 ## About
-I am a web developer focused on building practical digital projects, improving frontend skills, and growing through real-world learning experiences.
+I am a web developer focused on practical project work, frontend learning, problem solving, and continued growth through hands-on experience.
 
 ## Featured work
-This portfolio combines the major work completed across multiple years, including:
-- JavaScript and web assignments
-- React learning projects
-- Hackathon projects
-- Internship work
-- University coding exercises
-- Training-based tasks and collaborative builds
+This portfolio brings together work from multiple years, including:
+- JavaScript assignments and practice tasks
+- React-based learning projects
+- Hackathon work and team build activities
+- Internship and training-based project work
+- University Java/Python coursework
+- GitHub-based portfolio and public repositories
 
 ## GitHub profile
 - https://github.com/UsmanKD8
+
+## LinkedIn profile
+- https://www.linkedin.com/in/muhammad-usman-farooqi-20771218b/
 
 ## Skills
 - HTML
@@ -31,4 +34,4 @@ This portfolio combines the major work completed across multiple years, includin
 - Problem solving and debugging
 
 ## Notes
-This repository is kept simple and professional for GitHub Pages hosting so the portfolio can be shared easily on LinkedIn and other professional platforms.
+This profile is kept clean and professional for GitHub Pages hosting and for sharing on LinkedIn and other professional platforms.

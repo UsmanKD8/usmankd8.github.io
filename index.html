@@ -3,24 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Usman Khan | Portfolio</title>
+    <title>Muhammad Usman Farooqi | Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of Usman Khan — a web developer focused on frontend, web projects, and practical problem solving."
+      content="Portfolio of Muhammad Usman Farooqi — a web developer focused on practical projects, frontend learning, and real-world problem solving."
     />
     <style>
       :root {
         --bg: #07111d;
-        --bg-soft: #0e1d2f;
-        --panel: rgba(255, 255, 255, 0.04);
-        --panel-strong: rgba(255, 255, 255, 0.08);
+        --panel: rgba(255,255,255,0.04);
         --text: #edf4ff;
         --muted: #afbdd2;
         --primary: #67e8f9;
         --primary-2: #8b5cf6;
         --accent: #22c55e;
-        --border: rgba(255, 255, 255, 0.12);
-        --shadow: 0 18px 40px rgba(1, 5, 15, 0.42);
+        --border: rgba(255,255,255,0.12);
+        --shadow: 0 18px 40px rgba(1,5,15,0.42);
       }
 
       * { box-sizing: border-box; }
@@ -45,7 +43,7 @@
         position: sticky;
         top: 0;
         z-index: 20;
-        background: rgba(7, 17, 29, 0.8);
+        background: rgba(7,17,29,0.8);
         backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--border);
       }
@@ -72,11 +70,7 @@
         flex-wrap: wrap;
       }
 
-      .nav-links a {
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
+      .nav-links a { color: var(--muted); font-size: 0.95rem; }
       .nav-links a:hover { color: var(--text); }
 
       .button {
@@ -91,7 +85,7 @@
       .button.primary {
         background: linear-gradient(135deg, var(--primary), var(--primary-2));
         color: #06131d;
-        box-shadow: 0 12px 30px rgba(103, 232, 249, 0.28);
+        box-shadow: 0 12px 30px rgba(103,232,249,0.28);
       }
       .button.secondary {
         background: transparent;
@@ -99,10 +93,7 @@
         color: var(--text);
       }
 
-      .hero {
-        padding: 84px 0 36px;
-      }
-
+      .hero { padding: 84px 0 36px; }
       .hero-wrap {
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
@@ -115,8 +106,8 @@
         margin-bottom: 16px;
         padding: 0.42rem 0.8rem;
         border-radius: 999px;
-        background: rgba(103, 232, 249, 0.12);
-        border: 1px solid rgba(103, 232, 249, 0.2);
+        background: rgba(103,232,249,0.12);
+        border: 1px solid rgba(103,232,249,0.2);
         color: var(--primary);
         text-transform: uppercase;
         letter-spacing: 0.08em;
@@ -156,14 +147,8 @@
         margin-top: 28px;
       }
 
-      .hero-meta strong {
-        display: block;
-        font-size: 1.5rem;
-      }
-
-      .hero-meta span {
-        color: var(--muted);
-      }
+      .hero-meta strong { display: block; font-size: 1.5rem; }
+      .hero-meta span { color: var(--muted); }
 
       .profile-card {
         padding: 18px;
@@ -181,7 +166,7 @@
         justify-content: center;
         padding: 30px;
         border-radius: 22px;
-        background: linear-gradient(135deg, rgba(103, 232, 249, 0.24), rgba(139, 92, 246, 0.22));
+        background: linear-gradient(135deg, rgba(103,232,249,0.24), rgba(139,92,246,0.22));
         overflow: hidden;
       }
 
@@ -202,10 +187,7 @@
         box-shadow: inset 0 0 25px rgba(255,255,255,0.32), 0 18px 35px rgba(0,0,0,0.24);
       }
 
-      .section {
-        padding: 56px 0;
-      }
-
+      .section { padding: 56px 0; }
       .section-header {
         display: flex;
         justify-content: space-between;
@@ -219,22 +201,15 @@
         font-size: clamp(1.9rem, 3vw, 2.8rem);
       }
 
-      .section-header p {
-        margin: 0;
-        color: var(--muted);
-      }
+      .section-header p { margin: 0; color: var(--muted); }
 
-      .about-grid,
-      .contact-box {
+      .about-grid, .contact-box {
         display: grid;
         grid-template-columns: 1.15fr 0.85fr;
         gap: 24px;
       }
 
-      .card,
-      .skill-item,
-      .project-card,
-      .timeline-card {
+      .card, .skill-item, .project-card, .timeline-card {
         background: var(--panel);
         border: 1px solid var(--border);
         border-radius: 22px;
@@ -242,21 +217,9 @@
         box-shadow: var(--shadow);
       }
 
-      .card p,
-      .skill-item p,
-      .project-card p,
-      .timeline-card p,
-      .mini-item,
-      .contact-item {
-        color: var(--muted);
-      }
+      .card p, .skill-item p, .project-card p, .timeline-card p, .mini-item, .contact-item { color: var(--muted); }
 
-      .mini-list {
-        display: grid;
-        gap: 12px;
-        margin-top: 8px;
-      }
-
+      .mini-list { display: grid; gap: 12px; margin-top: 8px; }
       .mini-item {
         display: flex;
         align-items: center;
@@ -280,33 +243,17 @@
         gap: 20px;
       }
 
-      .timeline-card h3 {
-        margin: 0 0 14px;
-        color: var(--text);
-      }
+      .timeline-card h3 { margin: 0 0 14px; color: var(--text); }
+      .timeline-card ul { margin: 10px 0 0; padding-left: 18px; }
+      .timeline-card li { color: var(--muted); margin-bottom: 8px; }
 
-      .timeline-card ul {
-        margin: 10px 0 0;
-        padding-left: 18px;
-      }
-
-      .timeline-card li {
-        color: var(--muted);
-        margin-bottom: 8px;
-      }
-
-      .projects-grid,
-      .skills-grid {
+      .projects-grid, .skills-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 20px;
       }
 
-      .skill-item h3,
-      .project-card h3 {
-        margin: 0 0 12px;
-      }
-
+      .skill-item h3, .project-card h3 { margin: 0 0 12px; }
       .skill-tags {
         display: flex;
         flex-wrap: wrap;
@@ -315,8 +262,8 @@
       }
 
       .tag {
-        background: rgba(103, 232, 249, 0.1);
-        border: 1px solid rgba(103, 232, 249, 0.22);
+        background: rgba(103,232,249,0.1);
+        border: 1px solid rgba(103,232,249,0.22);
         color: #e5f9ff;
         border-radius: 999px;
         padding: 0.4rem 0.7rem;
@@ -334,8 +281,8 @@
         align-self: flex-start;
         border-radius: 999px;
         padding: 0.36rem 0.72rem;
-        background: rgba(34, 197, 94, 0.12);
-        border: 1px solid rgba(34, 197, 94, 0.22);
+        background: rgba(34,197,94,0.12);
+        border: 1px solid rgba(34,197,94,0.22);
         color: #adf4c3;
         font-size: 0.72rem;
         text-transform: uppercase;
@@ -349,13 +296,10 @@
         gap: 12px;
       }
 
-      .text-link {
-        color: var(--primary);
-        font-weight: 700;
-      }
+      .text-link { color: var(--primary); font-weight: 700; }
 
       .contact-card {
-        background: linear-gradient(135deg, rgba(103, 232, 249, 0.08), rgba(139, 92, 246, 0.08));
+        background: linear-gradient(135deg, rgba(103,232,249,0.08), rgba(139,92,246,0.08));
         border: 1px solid var(--border);
         border-radius: 22px;
         padding: 28px;
@@ -375,41 +319,24 @@
       }
 
       @media (max-width: 860px) {
-        .hero-wrap,
-        .about-grid,
-        .contact-box,
-        .timeline,
-        .projects-grid,
-        .skills-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .nav {
-          flex-direction: column;
-          gap: 12px;
-        }
-
-        .hero {
-          padding-top: 60px;
-        }
-
-        .avatar {
-          min-height: 320px;
-        }
+        .hero-wrap, .about-grid, .contact-box, .timeline, .projects-grid, .skills-grid { grid-template-columns: 1fr; }
+        .nav { flex-direction: column; gap: 12px; }
+        .hero { padding-top: 60px; }
+        .avatar { min-height: 320px; }
       }
     </style>
   </head>
   <body>
     <header>
       <div class="container nav">
-        <a href="#home" class="brand">Usman<span>KD8</span></a>
+        <a href="#home" class="brand">Muhammad <span>Usman Farooqi</span></a>
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#about">About</a>
           <a href="#journey">Journey</a>
           <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
+          <a href="#projects">Repositories</a>
           <a href="#contact">Contact</a>
-          <a href="https://github.com/UsmanKD8" class="button primary">GitHub</a>
+          <a href="https://github.com/UsmanKD8" class="button primary" target="_blank" rel="noreferrer">GitHub</a>
         </nav>
       </div>
     </header>
@@ -420,30 +347,30 @@
           <div>
             <span class="eyebrow">Web Developer</span>
             <h1>
-              I build <span class="highlight">practical digital solutions</span>
-              from ideas to working products.
+              I build <span class="highlight">working digital solutions</span>
+              from ideas into practical projects.
             </h1>
             <p>
-              I’m Usman Khan, a self-driven developer with hands-on experience in web development,
-              JavaScript, frontend projects, and academic/real-world problem solving. My work reflects
-              a mix of learning, execution, and continuous growth across 2024–2026.
+              I’m Muhammad Usman Farooqi, a web developer with experience across frontend work,
+              JavaScript projects, assignments, hackathons, internship tasks, and continuous learning.
+              My portfolio reflects my growth from 2024 through 2026.
             </p>
             <div class="cta-row">
-              <a href="#projects" class="button primary">View Projects</a>
-              <a href="#contact" class="button secondary">Connect</a>
+              <a href="#projects" class="button primary">View Repositories</a>
+              <a href="https://www.linkedin.com/in/muhammad-usman-farooqi-20771218b/" class="button secondary" target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
             <div class="hero-meta" aria-label="Quick stats">
               <div>
-                <strong>2+</strong>
-                <span>Years of learning</span>
+                <strong>2024–2026</strong>
+                <span>Learning journey</span>
               </div>
               <div>
                 <strong>20+</strong>
                 <span>Public repos</span>
               </div>
               <div>
-                <strong>100%</strong>
-                <span>Growth mindset</span>
+                <strong>Open</strong>
+                <span>To opportunities</span>
               </div>
             </div>
           </div>
@@ -460,25 +387,24 @@
         <div class="container">
           <div class="section-header">
             <h2>About Me</h2>
-            <p>Focused, curious, and building step by step</p>
+            <p>Focused, curious, and building steadily</p>
           </div>
 
           <div class="about-grid">
             <div class="card">
               <p>
-                I am a developer who enjoys turning ideas into working web experiences. My journey has
-                included HTML, CSS, JavaScript, React, assignments, hackathons, university work, and internship-based
-                projects. I like creating clean interfaces, solving coding challenges, and improving my skills through
-                real implementation.
+                I am a developer who enjoys transforming ideas into working web experiences. My hands-on work includes frontend development,
+                JavaScript and React learning, university coding tasks, internship-based work, hackathons, and continuous project-based learning.
+                I value clean code, practical problem solving, and steady execution.
               </p>
             </div>
 
             <div class="card">
               <div class="mini-list">
-                <div class="mini-item"><span class="dot"></span> Frontend & responsive web design</div>
-                <div class="mini-item"><span class="dot"></span> JavaScript and React learning projects</div>
-                <div class="mini-item"><span class="dot"></span> Hackathons, training, and internship work</div>
-                <div class="mini-item"><span class="dot"></span> Problem solving and continuous improvement</div>
+                <div class="mini-item"><span class="dot"></span> Frontend & responsive design</div>
+                <div class="mini-item"><span class="dot"></span> JavaScript, React and problem solving</div>
+                <div class="mini-item"><span class="dot"></span> University, internship, and training work</div>
+                <div class="mini-item"><span class="dot"></span> GitHub-based project portfolio</div>
               </div>
             </div>
           </div>
@@ -488,35 +414,37 @@
       <section id="journey" class="section">
         <div class="container">
           <div class="section-header">
-            <h2>Work Journey</h2>
-            <p>Progress from learning to project execution</p>
+            <h2>Development Journey</h2>
+            <p>From assignments to practical project work</p>
           </div>
 
           <div class="timeline">
             <div class="timeline-card">
               <h3>2024</h3>
-              <p>Built foundational web and JavaScript project work, including assignments, practice tasks, and beginner React learning.</p>
+              <p>Built fundamentals in HTML, CSS, JavaScript, assignments, and React practice projects.</p>
               <ul>
                 <li>assignment</li>
+                <li>javascript-assignments</li>
                 <li>JS-all-AssignmentS</li>
                 <li>react / react-2</li>
-                <li>pokemon / test / new-code</li>
+                <li>pokemon / new-code</li>
               </ul>
             </div>
 
             <div class="timeline-card">
               <h3>2025</h3>
-              <p>Focused on hackathons, collaborative coding, and structured training-based project development.</p>
+              <p>Worked on hackathon-based problems, team projects, and learning-focused software builds.</p>
               <ul>
                 <li>hackathon</li>
                 <li>SMIT-HAckhathon</li>
                 <li>Hackhathon-Saylani</li>
+                <li>hackthon-3</li>
               </ul>
             </div>
 
             <div class="timeline-card">
               <h3>2026</h3>
-              <p>Expanded into internship, university, and more polished project execution with practical exposure.</p>
+              <p>Expanded into internship, university programming, and more structured real-world project work.</p>
               <ul>
                 <li>internship-DHC-Work</li>
                 <li>SAYLANI-WORKS</li>
@@ -538,7 +466,7 @@
           <div class="skills-grid">
             <div class="skill-item">
               <h3>Frontend</h3>
-              <p>Building responsive, user-friendly interfaces with clean structure and modern design.</p>
+              <p>Creating responsive interfaces with clean structure and user-friendly design.</p>
               <div class="skill-tags">
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
@@ -549,7 +477,7 @@
 
             <div class="skill-item">
               <h3>Programming</h3>
-              <p>Solving coding problems and building logic-driven projects through practice and iteration.</p>
+              <p>Solving coding tasks, logic problems, and project work through continuous practice.</p>
               <div class="skill-tags">
                 <span class="tag">Python</span>
                 <span class="tag">Java</span>
@@ -560,7 +488,7 @@
 
             <div class="skill-item">
               <h3>Workflow</h3>
-              <p>Working with version control, project organization, and iterative learning.</p>
+              <p>Version control, project management, debugging, and iterative improvements.</p>
               <div class="skill-tags">
                 <span class="tag">Git</span>
                 <span class="tag">GitHub</span>
@@ -575,51 +503,62 @@
       <section id="projects" class="section">
         <div class="container">
           <div class="section-header">
-            <h2>Featured Projects</h2>
-            <p>Selected work from my GitHub and ongoing learning journey</p>
+            <h2>Repository Archive</h2>
+            <p>GitHub projects and work completed over time</p>
           </div>
 
           <div class="projects-grid">
             <article class="project-card">
-              <span class="project-badge">Training</span>
-              <h3>SAYLANI-WORKS</h3>
-              <p>Structured coursework and project work completed during professional training and learning sessions.</p>
+              <span class="project-badge">Live</span>
+              <h3>Portfolio</h3>
+              <p>Personal portfolio site published on GitHub Pages for profile and work presentation.</p>
               <div class="project-links">
-                <a href="https://github.com/UsmanKD8/SAYLANI-WORKS" class="text-link" target="_blank" rel="noreferrer">View Repo</a>
+                <a href="https://usmankd8.github.io" class="text-link" target="_blank" rel="noreferrer">Live Demo</a>
+                <a href="https://github.com/UsmanKD8/usmankd8.github.io" class="text-link" target="_blank" rel="noreferrer">Source Code</a>
               </div>
             </article>
 
             <article class="project-card">
-              <span class="project-badge">Internship</span>
+              <span class="project-badge">Verified</span>
               <h3>internship-DHC-Work</h3>
-              <p>Project execution and practical work during internship experience, reflecting real-world learning and implementation.</p>
+              <p>Internship-based project work and practical implementation tasks.</p>
               <div class="project-links">
-                <a href="https://github.com/UsmanKD8/internship-DHC-Work" class="text-link" target="_blank" rel="noreferrer">View Repo</a>
+                <a href="https://usmankd8.github.io/internship-DHC-Work" class="text-link" target="_blank" rel="noreferrer">Live Demo</a>
+                <a href="https://github.com/UsmanKD8/internship-DHC-Work" class="text-link" target="_blank" rel="noreferrer">Code</a>
               </div>
             </article>
 
             <article class="project-card">
-              <span class="project-badge">Hackathon</span>
+              <span class="project-badge">GitHub</span>
+              <h3>SAYLANI-WORKS</h3>
+              <p>Professional training and coursework repository containing structured web work and learning tasks.</p>
+              <div class="project-links">
+                <a href="https://github.com/UsmanKD8/SAYLANI-WORKS" class="text-link" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <span class="project-badge">GitHub</span>
               <h3>Hackhathon-Saylani</h3>
-              <p>Collaborative challenge-based work focused on creating creative solutions within a limited time frame.</p>
+              <p>Hackathon project reflecting collaborative problem solving and rapid build execution.</p>
               <div class="project-links">
-                <a href="https://github.com/UsmanKD8/Hackhathon-Saylani" class="text-link" target="_blank" rel="noreferrer">View Repo</a>
+                <a href="https://github.com/UsmanKD8/Hackhathon-Saylani" class="text-link" target="_blank" rel="noreferrer">Repository</a>
               </div>
             </article>
 
             <article class="project-card">
-              <span class="project-badge">JS</span>
+              <span class="project-badge">GitHub</span>
               <h3>JS-all-AssignmentS</h3>
-              <p>JavaScript assignments and coding exercises covering logic, functions, DOM, and problem solving.</p>
+              <p>JavaScript assignments covering core logic, front-end interactions, and practice exercises.</p>
               <div class="project-links">
-                <a href="https://github.com/UsmanKD8/JS-all-AssignmentS" class="text-link" target="_blank" rel="noreferrer">View Repo</a>
+                <a href="https://github.com/UsmanKD8/JS-all-AssignmentS" class="text-link" target="_blank" rel="noreferrer">Repository</a>
               </div>
             </article>
 
             <article class="project-card">
-              <span class="project-badge">React</span>
+              <span class="project-badge">GitHub</span>
               <h3>react / react-2</h3>
-              <p>React-based practice projects focusing on front-end components, structure, and UI development.</p>
+              <p>React practice work focused on component structure, interfaces, and front-end learning.</p>
               <div class="project-links">
                 <a href="https://github.com/UsmanKD8/react" class="text-link" target="_blank" rel="noreferrer">React</a>
                 <a href="https://github.com/UsmanKD8/react-2" class="text-link" target="_blank" rel="noreferrer">React 2</a>
@@ -627,11 +566,29 @@
             </article>
 
             <article class="project-card">
-              <span class="project-badge">Academic</span>
+              <span class="project-badge">GitHub</span>
               <h3>UNI-JAVA-WORK</h3>
-              <p>University coursework focused on Java programming, logic building, and academic development tasks.</p>
+              <p>University programming repository covering Java tasks and logic-based assignments.</p>
               <div class="project-links">
-                <a href="https://github.com/UsmanKD8/UNI-JAVA-WORK" class="text-link" target="_blank" rel="noreferrer">View Repo</a>
+                <a href="https://github.com/UsmanKD8/UNI-JAVA-WORK" class="text-link" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <span class="project-badge">GitHub</span>
+              <h3>UNI-PYTHON-WORK</h3>
+              <p>Python and academic coding work completed during university learning.</p>
+              <div class="project-links">
+                <a href="https://github.com/UsmanKD8/UNI-PYTHON-WORK" class="text-link" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <span class="project-badge">GitHub</span>
+              <h3>More Public Repos</h3>
+              <p>Additional project work includes assignment, assignment2, javascript assignments, pokemon, new-code, test, and other learning repositories.</p>
+              <div class="project-links">
+                <a href="https://github.com/UsmanKD8?tab=repositories" class="text-link" target="_blank" rel="noreferrer">All Repositories</a>
               </div>
             </article>
           </div>
@@ -645,18 +602,18 @@
             <h2>Open to opportunities, learning, and collaboration</h2>
             <div class="contact-list">
               <div class="contact-item">GitHub: github.com/UsmanKD8</div>
-              <div class="contact-item">LinkedIn: linkedin.com/in/usmankd8</div>
+              <div class="contact-item">LinkedIn: linkedin.com/in/muhammad-usman-farooqi-20771218b</div>
               <div class="contact-item">Portfolio: usmankd8.github.io</div>
             </div>
           </div>
 
           <div class="card">
             <p>
-              I enjoy building real-world solutions, improving my technical foundation, and contributing to projects where clean code and good user experience matter.
+              I enjoy building useful solutions, improving technical foundations, and contributing to projects where clean code and strong execution matter.
             </p>
             <div class="cta-row">
               <a href="https://github.com/UsmanKD8" class="button primary" target="_blank" rel="noreferrer">Visit GitHub</a>
-              <a href="https://www.linkedin.com/in/usmankd8" class="button secondary" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/muhammad-usman-farooqi-20771218b/" class="button secondary" target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
           </div>
         </div>
@@ -664,7 +621,7 @@
     </main>
 
     <footer>
-      <div class="container">© 2026 Usman Khan • Portfolio</div>
+      <div class="container">© 2026 Muhammad Usman Farooqi • Portfolio</div>
     </footer>
   </body>
 </html>
