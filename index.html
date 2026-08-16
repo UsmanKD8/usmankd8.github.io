@@ -1,13 +1,664 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muhammad Usman Farooqi | Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio of Muhammad Usman Farooqi — a web developer focused on practical projects, frontend learning, and real-world problem solving."
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Usman Farooqi | Web Developer</title>
+  <meta name="description" content="Portfolio of Muhammad Usman Farooqi - Web Developer focused on frontend & backend solutions.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* HEADER */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: #667eea; }
+
+    .btn {
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #667eea;
+      color: #667eea;
+    }
+
+    .btn-secondary:hover {
+      background: #667eea;
+      color: white;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 80px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .hero-content h1 .highlight {
+      background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .stat-box .number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #ffd89b;
+    }
+
+    .stat-box .label {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+    }
+
+    .profile-image {
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 350px;
+      height: 350px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-pic svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 0;
+      background: white;
+      margin-top: 60px;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      text-align: center;
+      color: #333;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 5px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 15px auto 0;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .skill-item {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      padding: 12px 20px;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+      color: #333;
+      font-weight: 600;
+    }
+
+    /* PROJECTS GRID */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+      border-top: 4px solid #667eea;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3);
+    }
+
+    .project-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 30px;
+      color: white;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+
+    .project-card h3 {
+      color: white;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-description {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .project-links a {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.2s;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .project-links a:hover {
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    /* CONTACT */
+    .contact-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      padding: 30px;
+      border-radius: 12px;
+      border: 2px solid #667eea;
+      text-align: center;
+    }
+
+    .contact-box h3 {
+      color: #667eea;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .contact-box a, .contact-box p {
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-box a:hover {
+      color: #667eea;
+    }
+
+    .email-form {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 40px;
+      border-radius: 12px;
+      color: white;
+      text-align: center;
+    }
+
+    .email-form h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    .email-form a {
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .email-form a:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 80px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 0;
+      }
+
+      .hero-content h1 { font-size: 2.2rem; }
+      .profile-pic { width: 250px; height: 250px; }
+      
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 0.9rem;
+      }
+
+      section {
+        margin-top: 30px;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">Usman Farooqi</div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://github.com/UsmanKD8" class="btn btn-primary" target="_blank">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 80px 0; border-radius: 0;">
+    <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+      <div class="hero-content">
+        <h1>Hi, I'm <span class="highlight">Muhammad Usman Farooqi</span></h1>
+        <p>A passionate web developer crafting digital solutions with HTML, CSS, JavaScript, React, and more. I build projects that matter, learn continuously, and create value through clean code.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-box">
+            <div class="number">2024-2026</div>
+            <div class="label">Learning Journey</div>
+          </div>
+          <div class="stat-box">
+            <div class="number">20+</div>
+            <div class="label">Public Repos</div>
+          </div>
+          <div class="stat-box">
+            <div class="number">100%</div>
+            <div class="label">Dedicated</div>
+          </div>
+        </div>
+      </div>
+      <div class="profile-image">
+        <div class="profile-pic">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ffd89b;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#19547b;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#bgGrad)"/>
+            <!-- Head -->
+            <circle cx="200" cy="120" r="50" fill="#ffd89b"/>
+            <!-- Body -->
+            <rect x="150" y="180" width="100" height="120" rx="20" fill="#ffd89b"/>
+            <!-- Shirt -->
+            <rect x="140" y="180" width="120" height="80" rx="10" fill="#764ba2"/>
+            <!-- Arms -->
+            <rect x="80" y="190" width="60" height="30" rx="15" fill="#ffd89b"/>
+            <rect x="260" y="190" width="60" height="30" rx="15" fill="#ffd89b"/>
+            <!-- Laptop -->
+            <rect x="130" y="280" width="140" height="80" rx="5" fill="#333"/>
+            <rect x="135" y="285" width="130" height="65" fill="#0a0a0a"/>
+            <line x1="130" y1="355" x2="270" y2="355" stroke="#333" stroke-width="3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-content">
+          <p>I'm a web developer focused on creating practical digital solutions through hands-on learning and continuous improvement. My journey from 2024 to 2026 includes frontend development, JavaScript mastery, React projects, and real-world work in internships and training programs.</p>
+          <p>I believe in clean code, responsive design, and building products that actually work. Whether it's a university assignment or a production project, I bring dedication and problem-solving mindset to every task.</p>
+        </div>
+        <div>
+          <h3 style="color: #667eea; font-size: 1.3rem; margin-bottom: 20px;">Core Strengths</h3>
+          <div class="skills-list">
+            <div class="skill-item">✓ Frontend Development</div>
+            <div class="skill-item">✓ JavaScript & React</div>
+            <div class="skill-item">✓ Responsive Design</div>
+            <div class="skill-item">✓ Python & Java</div>
+            <div class="skill-item">✓ Problem Solving</div>
+            <div class="skill-item">✓ Git & GitHub</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 30px; border-radius: 12px; border-left: 4px solid #667eea;">
+          <h3 style="color: #667eea; margin-bottom: 15px;">Frontend</h3>
+          <p style="color: #666; line-height: 1.8;">HTML, CSS, JavaScript, React, responsive design, UI/UX principles</p>
+        </div>
+        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 30px; border-radius: 12px; border-left: 4px solid #667eea;">
+          <h3 style="color: #667eea; margin-bottom: 15px;">Backend</h3>
+          <p style="color: #666; line-height: 1.8;">Node.js, Python, Java, APIs, database concepts</p>
+        </div>
+        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 30px; border-radius: 12px; border-left: 4px solid #667eea;">
+          <h3 style="color: #667eea; margin-bottom: 15px;">Tools</h3>
+          <p style="color: #666; line-height: 1.8;">Git, GitHub, VS Code, debugging, problem solving</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects & Repositories</h2>
+      <div class="projects-grid">
+        <!-- Live & Working -->
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-badge">✓ LIVE</span>
+            <h3>Portfolio Website</h3>
+          </div>
+          <div class="project-content">
+            <p class="project-description">Professional portfolio showcasing all my work, skills, and projects in one place.</p>
+            <div class="project-links">
+              <a href="https://usmankd8.github.io" target="_blank">Live Demo</a>
+              <a href="https://github.com/UsmanKD8/usmankd8.github.io" target="_blank">Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-badge">✓ LIVE</span>
+            <h3>internship-DHC-Work</h3>
+          </div>
+          <div class="project-content">
+            <p class="project-description">Internship-based practical project work with real-world implementation and learning.</p>
+            <div class="project-links">
+              <a href="https://usmankd8.github.io/internship-DHC-Work" target="_blank">Live</a>
+              <a href="https://github.com/UsmanKD8/internship-DHC-Work" target="_blank">Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-badge">GITHUB</span>
+            <h3>JS-all-AssignmentS</h3>
+          </div>
+          <div class="project-content">
+            <p class="project-description">Comprehensive JavaScript assignments covering core concepts, logic, and DOM manipulation.</p>
+            <div class="project-links">
+              <a href="https://github.com/UsmanKD8/JS-all-AssignmentS" target="_blank">Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-badge">GITHUB</span>
+            <h3>SAYLANI-WORKS</h3>
+          </div>
+          <div class="project-content">
+            <p class="project-description">Professional training coursework and structured web development projects from SAYLANI.</p>
+            <div class="project-links">
+              <a href="https://github.com/UsmanKD8/SAYLANI-WORKS" target="_blank">Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-badge">REACT</span>
+            <h3>React Projects</h3>
+          </div>
+          <div class="project-content">
+            <p class="project-description">React-based frontend practice projects focusing on components and UI development.</p>
+            <div class="project-links">
+              <a href="https://github.com/UsmanKD8/react" target="_blank">React 1</a>
+              <a href="https://github.com/UsmanKD8/react-2" target="_blank">React 2</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <span class="project-badge">GITHUB</span>
+            <h3>More Projects</h3>
+          </div>
+          <div class="project-content">
+            <p class="project-description">20+ public repositories including hackathons, university work, and learning projects.</p>
+            <div class="project-links">
+              <a href="https://github.com/UsmanKD8?tab=repositories" target="_blank">View All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="container contact-container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h3>📧 Email</h3>
+          <a href="mailto:muhammadusman.dev@gmail.com">muhammadusman.dev@gmail.com</a>
+        </div>
+        <div class="contact-box">
+          <h3>💼 LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/muhammad-usman-farooqi-20771218b/" target="_blank">Connect with me</a>
+        </div>
+      </div>
+      <div class="email-form">
+        <h3>Ready to collaborate or have questions?</h3>
+        <p style="margin: 20px 0;">I'm open to opportunities, freelance projects, and professional collaborations.</p>
+        <a href="mailto:muhammadusman.dev@gmail.com" style="font-size: 1.1rem;">Send me an email →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Muhammad Usman Farooqi. All rights reserved. | <a href="https://github.com/UsmanKD8" style="color: #667eea; text-decoration: none;" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/muhammad-usman-farooqi-20771218b/" style="color: #667eea; text-decoration: none;" target="_blank">LinkedIn</a></p>
+    </div>
+  </footer>
+</body>
+</html>
     <style>
       :root {
         --bg: #07111d;
