@@ -6,59 +6,77 @@
   <title>Muhammad Usman Farooqi | Web Developer</title>
   <meta name="description" content="Portfolio of Muhammad Usman Farooqi - Web Developer focused on frontend & backend solutions.">
   <style>
+    /* Theme updated to glass + 3D style + orange accent (replaced previous blue) */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #2a59d9 0%, #1f4bb0 100%); /* cleaned blue theme */
-      color: #f4f7fb;
+      background: radial-gradient(circle at 10% 10%, #0b0f14 0%, #07080a 35%, #030304 100%);
+      color: #dfeefb;
+      -webkit-font-smoothing:antialiased;
       line-height: 1.6;
+      min-height: 100vh;
     }
 
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
     /* HEADER */
     header {
-      background: rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 12px; z-index: 40;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius: 14px; margin: 12px 0; padding: 10px; backdrop-filter: blur(8px);
+      box-shadow: 0 8px 40px rgba(2,6,15,0.6);
     }
 
-    .nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
-    .logo { font-size: 1.6rem; font-weight: 800; color: #fff; }
-    .nav-links { display:flex; gap:18px; list-style:none; align-items:center; }
-    .nav-links a { text-decoration:none; color: #dfe9ff; font-weight:600; }
-    .btn-primary { padding:8px 18px; border-radius:8px; background:linear-gradient(90deg,#74b9ff,#4f6ef8); color:#041028; font-weight:800; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .logo { font-weight:900; font-size:1.2rem; color:#fff; letter-spacing:0.4px; }
+    .nav-links { display:flex; gap:14px; align-items:center; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration:none; padding:6px 10px; border-radius:10px; font-weight:700; }
+    .nav-links a:hover { background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); }
+
+    .btn-primary { background: linear-gradient(90deg,#ff8a2b,#ff6a00); color:#07131a; padding:10px 14px; border-radius:12px; font-weight:900; text-decoration:none; }
 
     /* HERO */
-    .hero { padding:60px 0; display:grid; grid-template-columns: 1fr 420px; gap:36px; align-items:center; position:relative; }
-    .hero-overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(4,6,12,0.15), rgba(4,6,12,0.25)); pointer-events:none; }
-    .hero h1 { font-size:2.6rem; color:#fff; margin-bottom:12px; }
-    .highlight { background:linear-gradient(90deg,#ffd89b,#ffb86b); -webkit-background-clip:text; color:transparent; }
-    .hero p { color: rgba(255,255,255,0.9); max-width:680px; }
+    .hero { padding:56px 0; display:grid; grid-template-columns: 1fr 420px; gap:36px; align-items:center; position:relative; }
+    .hero-left h1 { font-size:2.6rem; color:#fff; margin-bottom:10px; line-height:1.02; }
+    .hero-left p { color: rgba(255,255,255,0.85); max-width:700px; margin-bottom:18px; }
+    .highlight { background: linear-gradient(90deg,#ffd89b,#ffb86b); -webkit-background-clip:text; color:transparent; }
 
-    /* profile */
-    .profile-card { display:flex; flex-direction:column; align-items:center; gap:12px; }
-    .avatar { width: 360px; height:360px; border-radius:50%; overflow:hidden; border:6px solid rgba(255,255,255,0.08); box-shadow: 0 30px 60px rgba(6,12,30,0.45); background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); }
-    .avatar img { width:100%; height:100%; object-fit:cover; display:block; }
-    .svg-fallback { width:100%; height:100%; display:none; align-items:center; justify-content:center; background:linear-gradient(135deg,#e6f0ff 0%, #dbe8ff 40%); }
-    .name { color:#fff; font-weight:800; font-size:1.2rem; }
+    /* Decorative 3D orange circle behind avatar */
+    .avatar-wrap { position: relative; width: 420px; display:flex; justify-content:center; align-items:center; }
+    .orange-disc {
+      position:absolute; width:420px; height:420px; border-radius:50%; background: radial-gradient(circle at 35% 30%, #ffb86b 0%, #ff8a2b 40%, #ff6a00 100%); filter: blur(24px); transform: translateZ(-60px) scale(1.05); z-index:1; }
 
-    /* sections */
-    section { padding:48px 0; background: #fff; color:#1b2430; border-radius:18px; margin-top:40px; }
-    .section-title { text-align:center; font-size:1.8rem; margin-bottom:24px; }
+    .profile-card {
+      position:relative; z-index:2; width:320px; height:320px; display:flex; align-items:center; justify-content:center; border-radius:28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      box-shadow: 0 30px 80px rgba(10,20,40,0.6);
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow:hidden;
+    }
+
+    .profile-card:hover { transform: translateY(-10px) rotateX(6deg) rotateY(-6deg); box-shadow:0 50px 120px rgba(10,20,40,0.7); }
+
+    .avatar-inner { width:260px; height:260px; border-radius:50%; overflow:hidden; border:6px solid rgba(255,255,255,0.06); background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
+    .avatar-inner img { width:100%; height:100%; object-fit:cover; display:block; }
+
+    .profile-meta { text-align:center; margin-top:12px; color: rgba(255,255,255,0.95); font-weight:700; }
+
+    /* Sections use glass cards */
+    section { padding:40px; margin-top:36px; border-radius:18px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04); box-shadow: 0 20px 60px rgba(2,6,15,0.6); color:#e9f4ff; }
+    .section-title { font-size:1.6rem; color:#fff; text-align:center; margin-bottom:18px; }
 
     .projects-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:18px; }
-    .project-card { background:#f7fbff; border-radius:12px; padding:18px; box-shadow:0 8px 30px rgba(16,40,100,0.06); }
-    .project-links a { display:inline-block; margin-right:10px; padding:8px 12px; border-radius:8px; text-decoration:none; background:linear-gradient(90deg,#74b9ff,#4f6ef8); color:#041028; font-weight:700; }
+    .project-card { background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01)); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.03); }
+    .project-links a { display:inline-block; margin-right:8px; padding:8px 12px; border-radius:10px; text-decoration:none; background: linear-gradient(90deg,#ff9b4a,#ff6a00); color:#07131a; font-weight:800; }
 
     .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
 
-    @media (max-width:900px){ .hero { grid-template-columns: 1fr; } .projects-grid{ grid-template-columns:1fr; } .avatar{ width:260px; height:260px; } }
+    footer { text-align:center; color:rgba(255,255,255,0.6); margin-top:18px; }
+
+    @media (max-width:920px){ .hero { grid-template-columns: 1fr; } .avatar-wrap{ width:100%; justify-content:center; } .projects-grid{ grid-template-columns:1fr; } .profile-card{ width:260px; height:260px; } .orange-disc{ width:320px; height:320px; } }
   </style>
 </head>
 <body>
@@ -78,24 +96,19 @@
 
   <main class="container">
     <section class="hero" aria-label="Hero">
-      <div>
+      <div class="hero-left">
         <h1>Hi, I'm <span class="highlight">Muhammad Usman Farooqi</span></h1>
-        <p>I'm a web developer focused on frontend and backend projects. Below are my live projects and repositories — I only list links that exist on my GitHub to keep this portfolio accurate for recruiters.</p>
+        <p>Web developer focused on frontend & backend. This portfolio lists only live projects and verified repositories. The design uses glassmorphism, depth and a 3D-profile card for a modern, recruiter-friendly look.</p>
         <p style="margin-top:16px;"><a href="#projects" class="btn-primary">View Projects</a></p>
       </div>
 
-      <div class="profile-card" aria-hidden="false">
-        <div class="avatar" id="avatar">
-          <img src="assets/profile.webp" alt="Usman Farooqi profile photo" id="profileImg" onerror="(function(){document.getElementById('profileImg').style.display='none';document.getElementById('svgFallback').style.display='flex';})();" />
-          <div id="svgFallback" class="svg-fallback" role="img" aria-label="Profile initials" style="display:none;">
-            <svg width="100%" height="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-              <rect width="400" height="400" rx="200" fill="#dbe8ff" />
-              <text x="50%" y="55%" text-anchor="middle" font-size="120" font-family="Segoe UI, Arial" fill="#1b2430" font-weight="700">UF</text>
-            </svg>
+      <div class="avatar-wrap">
+        <div class="orange-disc" aria-hidden="true"></div>
+        <div class="profile-card" id="profileCard">
+          <div class="avatar-inner">
+            <img src="assets/profile.webp" alt="Usman Farooqi profile photo" id="profileImg" onerror="(function(){document.getElementById('profileImg').style.display='none';})();" />
           </div>
         </div>
-        <div class="name">Muhammad Usman Farooqi</div>
-        <div style="color:rgba(255,255,255,0.85); font-weight:600;">Frontend & Backend Developer</div>
       </div>
     </section>
 
@@ -106,7 +119,7 @@
           <h3>Portfolio Website</h3>
           <p>Live demo and source for this portfolio.</p>
           <div class="project-links">
-            <a href="https://usmankd8.github.io" target="_blank" rel="noopener">Live Demo</a>
+            <a href="https://usmankd8.github.io" target="_blank" rel="noopener">Live</a>
             <a href="https://github.com/UsmanKD8/usmankd8.github.io" target="_blank" rel="noopener">Code</a>
           </div>
         </div>
@@ -164,34 +177,34 @@
     <section id="contact">
       <h2 class="section-title">Get In Touch</h2>
       <div class="contact-grid">
-        <div style="background:#f7fbff; padding:18px; border-radius:12px;"> 
+        <div style="background:linear-gradient(180deg,#fff 0%, #f3f8ff 100%); padding:18px; border-radius:12px; color:#0b1630;"> 
           <h3>Email</h3>
           <a href="mailto:muhammadusman.dev@gmail.com">muhammadusman.dev@gmail.com</a>
         </div>
-        <div style="background:#f7fbff; padding:18px; border-radius:12px;">
+        <div style="background:linear-gradient(180deg,#fff 0%, #f3f8ff 100%); padding:18px; border-radius:12px; color:#0b1630;">
           <h3>LinkedIn</h3>
           <a href="https://www.linkedin.com/in/muhammad-usman-farooqi-20771218b/" target="_blank" rel="noopener">Connect with me</a>
         </div>
       </div>
     </section>
 
-    <footer style="margin:28px 0; text-align:center; color:rgba(255,255,255,0.8);">
-      <p>&copy; 2026 Muhammad Usman Farooqi · <a href="https://github.com/UsmanKD8" style="color:#dfe9ff;">GitHub</a></p>
+    <footer style="margin:28px 0; text-align:center; color:rgba(255,255,255,0.7);">
+      <p>&copy; 2026 Muhammad Usman Farooqi · <a href="https://github.com/UsmanKD8" style="color:#ffd9b2;">GitHub</a></p>
     </footer>
   </main>
 
   <script>
-    // Keep the tilt effect but lightweight and safe
+    // Lightweight 3D interactive profile card
     (function(){
-      const card = document.getElementById('avatar');
+      const card = document.getElementById('profileCard');
       if(!card) return;
-      card.addEventListener('mousemove', (e) => {
+      card.addEventListener('mousemove', (e)=>{
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `rotateX(${ -y * 6 }deg) rotateY(${ x * 6 }deg)`;
+        card.style.transform = `translateZ(0) rotateX(${ -y * 10 }deg) rotateY(${ x * 10 }deg)`;
       });
-      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      card.addEventListener('mouseleave', ()=>{ card.style.transform = ''; });
     })();
   </script>
 </body>
