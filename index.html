@@ -11,411 +11,187 @@
     
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #333;
+      background: linear-gradient(135deg, #2a59d9 0%, #1f4bb0 100%); /* cleaned blue theme */
+      color: #f4f7fb;
       line-height: 1.6;
     }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
     /* HEADER */
     header {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-    }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
+    .logo { font-size: 1.6rem; font-weight: 800; color: #fff; }
+    .nav-links { display:flex; gap:18px; list-style:none; align-items:center; }
+    .nav-links a { text-decoration:none; color: #dfe9ff; font-weight:600; }
+    .btn-primary { padding:8px 18px; border-radius:8px; background:linear-gradient(90deg,#74b9ff,#4f6ef8); color:#041028; font-weight:800; }
 
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    /* HERO */
+    .hero { padding:60px 0; display:grid; grid-template-columns: 1fr 420px; gap:36px; align-items:center; position:relative; }
+    .hero-overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(4,6,12,0.15), rgba(4,6,12,0.25)); pointer-events:none; }
+    .hero h1 { font-size:2.6rem; color:#fff; margin-bottom:12px; }
+    .highlight { background:linear-gradient(90deg,#ffd89b,#ffb86b); -webkit-background-clip:text; color:transparent; }
+    .hero p { color: rgba(255,255,255,0.9); max-width:680px; }
 
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-      align-items: center;
-    }
+    /* profile */
+    .profile-card { display:flex; flex-direction:column; align-items:center; gap:12px; }
+    .avatar { width: 360px; height:360px; border-radius:50%; overflow:hidden; border:6px solid rgba(255,255,255,0.08); box-shadow: 0 30px 60px rgba(6,12,30,0.45); background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); }
+    .avatar img { width:100%; height:100%; object-fit:cover; display:block; }
+    .svg-fallback { width:100%; height:100%; display:none; align-items:center; justify-content:center; background:linear-gradient(135deg,#e6f0ff 0%, #dbe8ff 40%); }
+    .name { color:#fff; font-weight:800; font-size:1.2rem; }
 
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
+    /* sections */
+    section { padding:48px 0; background: #fff; color:#1b2430; border-radius:18px; margin-top:40px; }
+    .section-title { text-align:center; font-size:1.8rem; margin-bottom:24px; }
 
-    .nav-links a:hover { color: #667eea; }
+    .projects-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:18px; }
+    .project-card { background:#f7fbff; border-radius:12px; padding:18px; box-shadow:0 8px 30px rgba(16,40,100,0.06); }
+    .project-links a { display:inline-block; margin-right:10px; padding:8px 12px; border-radius:8px; text-decoration:none; background:linear-gradient(90deg,#74b9ff,#4f6ef8); color:#041028; font-weight:700; }
 
-    .btn {
-      padding: 10px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-      display: inline-block;
-    }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid #667eea;
-      color: #667eea;
-    }
-
-    .btn-secondary:hover {
-      background: #667eea;
-      color: white;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      padding: 80px 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      /* subtle overlay to ensure text contrast over banner */
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(10,10,10,0.25), rgba(10,10,10,0.45));
-      pointer-events: none;
-    }
-
-    .hero-content { position: relative; z-index: 2; }
-
-    .hero-content h1 {
-      font-size: 3.5rem;
-      line-height: 1.1;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-
-    .hero-content h1 .highlight {
-      background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-content p {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 30px;
-      line-height: 1.8;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .stat-box {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      text-align: center;
-    }
-
-    .stat-box .number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #ffd89b;
-    }
-
-    .stat-box .label {
-      color: rgba(255, 255, 255, 0.9);
-      font-weight: 600;
-    }
-
-    .profile-image {
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .profile-pic {
-      width: 350px;
-      height: 350px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 3px solid rgba(255, 255, 255, 0.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-      margin: 0 auto;
-    }
-
-    .profile-pic:hover { transform: translateY(-8px) rotateX(4deg); box-shadow: 0 30px 90px rgba(0,0,0,0.45); }
-
-    .profile-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* small 3D-like label under picture */
-    .profile-3d-shadow {
-      position: relative;
-      width: 360px;
-      margin: 18px auto 0;
-      height: 14px;
-      border-radius: 50%;
-      filter: blur(14px);
-      background: radial-gradient(ellipse at center, rgba(0,0,0,0.45), rgba(0,0,0,0.05));
-      z-index: 1;
-    }
-
-    /* SECTIONS */
-    section { padding: 80px 0; background: white; margin-top: 60px; border-radius: 20px 20px 0 0; }
-
-    .section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; color: #333; }
-
-    .section-title::after { content: ''; display: block; width: 80px; height: 5px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 15px auto 0; }
-
-    /* ... rest of existing CSS unchanged ... keep responsive tweaks */
-
-    @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; padding: 40px 0; }
-      .hero-content h1 { font-size: 2.2rem; }
-      .profile-pic { width: 250px; height: 250px; }
-      .hero-stats { grid-template-columns: repeat(2, 1fr); }
-      .about-grid { grid-template-columns: 1fr; gap: 30px; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .nav-links { gap: 15px; font-size: 0.9rem; }
-      section { margin-top: 30px; border-radius: 0; }
-    }
+    @media (max-width:900px){ .hero { grid-template-columns: 1fr; } .projects-grid{ grid-template-columns:1fr; } .avatar{ width:260px; height:260px; } }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
     <div class="container">
       <nav class="nav">
         <div class="logo">Usman Farooqi</div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="https://github.com/UsmanKD8" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="https://github.com/UsmanKD8" class="btn-primary" target="_blank" rel="noopener">GitHub</a>
+        </div>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero" style="background-image: url('https://s3-figma-hubfile-images-production-cdn-cgi.figma.com/cdn-cgi/image/format=auto,quality=85,width=1600/hub/file/carousel/img/6ebd45521e05e299d8b3c24f2af5ee759532f288'); background-size: cover; background-position: center; padding: 80px 0; border-radius: 0;">
-    <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index:2;">
-      <div class="hero-content">
+  <main class="container">
+    <section class="hero" aria-label="Hero">
+      <div>
         <h1>Hi, I'm <span class="highlight">Muhammad Usman Farooqi</span></h1>
-        <p>A passionate web developer crafting digital solutions with HTML, CSS, JavaScript, React, and more. I build projects that matter, learn continuously, and create value through clean code.</p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-box">
-            <div class="number">2024-2026</div>
-            <div class="label">Learning Journey</div>
-          </div>
-          <div class="stat-box">
-            <div class="number">23+</div>
-            <div class="label">Public Repos</div>
-          </div>
-          <div class="stat-box">
-            <div class="number">100%</div>
-            <div class="label">Dedicated</div>
-          </div>
-        </div>
+        <p>I'm a web developer focused on frontend and backend projects. Below are my live projects and repositories — I only list links that exist on my GitHub to keep this portfolio accurate for recruiters.</p>
+        <p style="margin-top:16px;"><a href="#projects" class="btn-primary">View Projects</a></p>
       </div>
-      <div class="profile-image">
-        <div class="profile-pic" id="profileCard">
-          <!-- Replaced SVG with actual profile image file (assets/profile.webp) -->
-          <img src="assets/profile.webp" alt="Profile photo" class="profile-img" id="profileImg" />
-        </div>
-        <div class="profile-3d-shadow" aria-hidden="true"></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-grid">
-        <div class="about-content">
-          <p>I'm a web developer focused on creating practical digital solutions through hands-on learning and continuous improvement. My journey from 2024 to 2026 includes frontend development, backend basics, and project-driven learning.</p>
-          <p>I believe in clean code, responsive design, and building products that actually work. Whether it's a university assignment or a production project, I bring dedication and problem-solving to the table.</p>
-        </div>
-        <div>
-          <h3 style="color: #667eea; font-size: 1.3rem; margin-bottom: 20px;">Core Strengths</h3>
-          <div class="skills-list">
-            <div class="skill-item">✓ Frontend Development</div>
-            <div class="skill-item">✓ JavaScript & React</div>
-            <div class="skill-item">✓ Responsive Design</div>
-            <div class="skill-item">✓ Python & Java</div>
-            <div class="skill-item">✓ Problem Solving</div>
-            <div class="skill-item">✓ Git & GitHub</div>
+      <div class="profile-card" aria-hidden="false">
+        <div class="avatar" id="avatar">
+          <img src="assets/profile.webp" alt="Usman Farooqi profile photo" id="profileImg" onerror="(function(){document.getElementById('profileImg').style.display='none';document.getElementById('svgFallback').style.display='flex';})();" />
+          <div id="svgFallback" class="svg-fallback" role="img" aria-label="Profile initials" style="display:none;">
+            <svg width="100%" height="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <rect width="400" height="400" rx="200" fill="#dbe8ff" />
+              <text x="50%" y="55%" text-anchor="middle" font-size="120" font-family="Segoe UI, Arial" fill="#1b2430" font-weight="700">UF</text>
+            </svg>
           </div>
         </div>
+        <div class="name">Muhammad Usman Farooqi</div>
+        <div style="color:rgba(255,255,255,0.85); font-weight:600;">Frontend & Backend Developer</div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SKILLS SECTION -->
-  <section id="skills">
-    <div class="container">
-      <h2 class="section-title">Skills & Technologies</h2>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 30px; border-radius: 12px; border-left: 4px solid #667eea;">
-          <h3 style="color: #667eea; margin-bottom: 15px;">Frontend</h3>
-          <p style="color: #666; line-height: 1.8;">HTML, CSS, JavaScript, React, responsive design, UI/UX principles</p>
-        </div>
-        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 30px; border-radius: 12px; border-left: 4px solid #667eea;">
-          <h3 style="color: #667eea; margin-bottom: 15px;">Backend</h3>
-          <p style="color: #666; line-height: 1.8;">Node.js, Python, Java, APIs, database concepts</p>
-        </div>
-        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 30px; border-radius: 12px; border-left: 4px solid #667eea;">
-          <h3 style="color: #667eea; margin-bottom: 15px;">Tools</h3>
-          <p style="color: #666; line-height: 1.8;">Git, GitHub, VS Code, debugging, problem solving</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS SECTION -->
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title">Featured Projects & Repositories</h2>
-      
-      <!-- LIVE & WORKING -->
-      <h3 style="color: #667eea; font-size: 1.5rem; margin: 40px 0 20px 0; padding-left: 20px; border-left: 4px solid #667eea;">✓ Live & Working</h3>
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
       <div class="projects-grid">
         <div class="project-card">
-          <div class="project-header">
-            <span class="project-badge">✓ LIVE</span>
-            <h3>Portfolio Website</h3>
-          </div>
-          <div class="project-content">
-            <p class="project-description">Professional portfolio showcasing all my work, skills, and projects in one place.</p>
-            <div class="project-links">
-              <a href="https://usmankd8.github.io" target="_blank" rel="noopener">Live Demo</a>
-              <a href="https://github.com/UsmanKD8/usmankd8.github.io" target="_blank" rel="noopener">Code</a>
-            </div>
+          <h3>Portfolio Website</h3>
+          <p>Live demo and source for this portfolio.</p>
+          <div class="project-links">
+            <a href="https://usmankd8.github.io" target="_blank" rel="noopener">Live Demo</a>
+            <a href="https://github.com/UsmanKD8/usmankd8.github.io" target="_blank" rel="noopener">Code</a>
           </div>
         </div>
 
         <div class="project-card">
-          <div class="project-header">
-            <span class="project-badge">✓ LIVE</span>
-            <h3>internship-DHC-Work</h3>
-          </div>
-          <div class="project-content">
-            <p class="project-description">Internship-based practical project work with real-world implementation and learning.</p>
-            <div class="project-links">
-              <a href="https://usmankd8.github.io/internship-DHC-Work" target="_blank" rel="noopener">Live</a>
-              <a href="https://github.com/UsmanKD8/internship-DHC-Work" target="_blank" rel="noopener">Code</a>
-            </div>
+          <h3>internship-DHC-Work</h3>
+          <p>Internship projects and implementations.</p>
+          <div class="project-links">
+            <a href="https://usmankd8.github.io/internship-DHC-Work" target="_blank" rel="noopener">Live</a>
+            <a href="https://github.com/UsmanKD8/internship-DHC-Work" target="_blank" rel="noopener">Code</a>
           </div>
         </div>
+
+        <div class="project-card">
+          <h3>SMIT-WORKS</h3>
+          <p>Training and course work (live GitHub Pages available).</p>
+          <div class="project-links">
+            <a href="https://usmankd8.github.io/SMIT-WORKS" target="_blank" rel="noopener">Live</a>
+            <a href="https://github.com/UsmanKD8/SMIT-WORKS" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Hackathon</h3>
+          <p>Hackathon project (deployed on Vercel).</p>
+          <div class="project-links">
+            <a href="https://hackathon-beryl-eight.vercel.app" target="_blank" rel="noopener">Live</a>
+            <a href="https://github.com/UsmanKD8/hackathon" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>UNI-JAVA-WORK</h3>
+          <p>University Java coursework (code only).</p>
+          <div class="project-links">
+            <a href="https://github.com/UsmanKD8/UNI-JAVA-WORK" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>UNI-PYTHON-WORK</h3>
+          <p>University Python coursework (code only).</p>
+          <div class="project-links">
+            <a href="https://github.com/UsmanKD8/UNI-PYTHON-WORK" target="_blank" rel="noopener">Code</a>
+          </div>
+        </div>
+
       </div>
 
-      <!-- rest of projects unchanged for brevity -->
-    </div>
-  </section>
+      <div style="margin-top:20px; text-align:center;">
+        <a href="https://github.com/UsmanKD8?tab=repositories" target="_blank" rel="noopener" class="btn-primary">View All Repositories</a>
+      </div>
+    </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact">
-    <div class="container contact-container">
+    <section id="contact">
       <h2 class="section-title">Get In Touch</h2>
       <div class="contact-grid">
-        <div class="contact-box">
-          <h3>📧 Email</h3>
+        <div style="background:#f7fbff; padding:18px; border-radius:12px;"> 
+          <h3>Email</h3>
           <a href="mailto:muhammadusman.dev@gmail.com">muhammadusman.dev@gmail.com</a>
         </div>
-        <div class="contact-box">
-          <h3>💼 LinkedIn</h3>
+        <div style="background:#f7fbff; padding:18px; border-radius:12px;">
+          <h3>LinkedIn</h3>
           <a href="https://www.linkedin.com/in/muhammad-usman-farooqi-20771218b/" target="_blank" rel="noopener">Connect with me</a>
         </div>
       </div>
-      <div class="email-form">
-        <h3>Ready to collaborate or have questions?</h3>
-        <p style="margin: 20px 0;">I'm open to opportunities, freelance projects, and professional collaborations.</p>
-        <a href="mailto:muhammadusman.dev@gmail.com" style="font-size: 1.1rem;">Send me an email →</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Muhammad Usman Farooqi. All rights reserved. | <a href="https://github.com/UsmanKD8" style="color: #667eea; text-decoration: none;" target="_blank" rel="noopener">GitHub</a></p>
-    </div>
-  </footer>
+    <footer style="margin:28px 0; text-align:center; color:rgba(255,255,255,0.8);">
+      <p>&copy; 2026 Muhammad Usman Farooqi · <a href="https://github.com/UsmanKD8" style="color:#dfe9ff;">GitHub</a></p>
+    </footer>
+  </main>
 
   <script>
-    // Lightweight tilt effect for the profile card
+    // Keep the tilt effect but lightweight and safe
     (function(){
-      const card = document.getElementById('profileCard');
+      const card = document.getElementById('avatar');
       if(!card) return;
-      const bounds = { width: card.offsetWidth, height: card.offsetHeight };
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const px = (x / rect.width) - 0.5;
-        const py = (y / rect.height) - 0.5;
-        const rotateX = (py * 10).toFixed(2);
-        const rotateY = (px * -10).toFixed(2);
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `rotateX(${ -y * 6 }deg) rotateY(${ x * 6 }deg)`;
       });
-      card.addEventListener('mouseleave', () => { card.style.transform = 'translateY(0)'; });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
     })();
   </script>
 </body>
